@@ -1,0 +1,1671 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>菠萝传媒 - 视频内容制作与品牌传播 | 让每一个镜头都值得被记住</title>
+<meta name="description" content="菠萝传媒是一家专注于视频内容制作与品牌传播的创意机构，提供品牌短片、纪录片、短视频营销、直播运营等全链路视频服务，用专业镜头语言讲述真实动人的品牌故事。">
+<meta name="keywords" content="菠萝传媒,视频制作,品牌短片,纪录片,短视频营销,直播运营,内容制作">
+<meta property="og:title" content="菠萝传媒 - 视频内容制作与品牌传播">
+<meta property="og:description" content="用专业镜头语言讲述真实动人的品牌故事。">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--pine:#1a3a2a;
+--pine-light:#2a5a40;
+--pine-dark:#0f2419;
+--lime:#c8e63a;
+--lime-soft:#dff06e;
+--gold:#e8b84b;
+--cream:#f5f2e8;
+--cream-dark:#e8e3d3;
+--ink:#14231c;
+--text:#2e3d35;
+--text-light:#6b7d72;
+--white:#ffffff;
+--shadow:0 8px 32px rgba(26,58,42,0.12);
+--shadow-lg:0 24px 64px rgba(26,58,42,0.18);
+}
+html{scroll-behavior:smooth}
+body{
+font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+background:var(--cream);
+color:var(--text);
+line-height:1.7;
+overflow-x:hidden;
+-webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{max-width:100%;display:block}
+::selection{background:var(--lime);color:var(--pine-dark)}
+
+/* ===== Scroll Progress ===== */
+.scroll-progress{
+position:fixed;top:0;left:0;height:3px;
+background:linear-gradient(90deg,var(--lime),var(--gold));
+width:0%;z-index:9999;transition:width .1s linear;
+}
+
+/* ===== Header / Nav ===== */
+.site-header{
+position:fixed;top:0;left:0;right:0;z-index:1000;
+padding:18px 0;transition:all .35s ease;
+}
+.site-header.scrolled{
+background:rgba(245,242,232,0.92);
+backdrop-filter:blur(16px);
+box-shadow:0 2px 24px rgba(26,58,42,0.08);
+padding:12px 0;
+}
+.header-inner{
+max-width:1280px;margin:0 auto;padding:0 32px;
+display:flex;align-items:center;justify-content:space-between;
+}
+.logo{
+display:flex;align-items:center;gap:12px;
+font-weight:800;font-size:1.4rem;color:var(--pine);
+letter-spacing:.02em;
+}
+.logo-mark{
+width:44px;height:44px;flex-shrink:0;
+position:relative;display:flex;align-items:center;justify-content:center;
+}
+.logo-mark svg{width:100%;height:100%}
+.logo-text{line-height:1.1}
+.logo-text small{
+display:block;font-size:.6rem;font-weight:600;
+letter-spacing:.28em;color:var(--text-light);
+text-transform:uppercase;margin-top:2px;
+}
+.main-nav{display:flex;align-items:center;gap:36px}
+.main-nav a{
+font-size:.95rem;font-weight:600;color:var(--text);
+position:relative;padding:4px 0;transition:color .25s;
+}
+.main-nav a::after{
+content:"";position:absolute;bottom:-2px;left:0;
+width:0;height:2px;background:var(--lime);
+transition:width .3s ease;border-radius:2px;
+}
+.main-nav a:hover{color:var(--pine)}
+.main-nav a:hover::after{width:100%}
+.nav-cta{
+background:var(--pine);color:var(--cream)!important;
+padding:10px 24px!important;border-radius:40px;
+font-size:.9rem!important;transition:all .3s!important;
+box-shadow:0 4px 16px rgba(26,58,42,0.2);
+}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{
+background:var(--pine-light)!important;transform:translateY(-2px);
+box-shadow:0 8px 24px rgba(26,58,42,0.3);
+}
+.mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.mobile-toggle span{
+display:block;width:24px;height:2px;background:var(--pine);
+margin:5px 0;transition:all .3s;border-radius:2px;
+}
+
+/* ===== Hero ===== */
+.hero{
+position:relative;min-height:100vh;
+display:flex;align-items:center;overflow:hidden;
+padding:120px 0 80px;
+background:radial-gradient(circle at 70% 30%,rgba(200,230,58,0.14),transparent 55%),
+           radial-gradient(circle at 15% 80%,rgba(232,184,75,0.12),transparent 50%),
+           var(--cream);
+}
+.hero-bg-grid{
+position:absolute;inset:0;pointer-events:none;
+background-image:linear-gradient(rgba(26,58,42,0.035) 1px,transparent 1px),
+                 linear-gradient(90deg,rgba(26,58,42,0.035) 1px,transparent 1px);
+background-size:64px 64px;
+mask-image:radial-gradient(circle at center,black,transparent 85%);
+}
+.hero-orb{
+position:absolute;border-radius:50%;filter:blur(60px);opacity:.4;pointer-events:none;
+}
+.hero-orb.o1{width:420px;height:420px;background:var(--lime);top:-120px;right:-80px;animation:float 14s ease-in-out infinite}
+.hero-orb.o2{width:320px;height:320px;background:var(--gold);bottom:-100px;left:-60px;animation:float 18s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,40px)}}
+.hero-inner{
+max-width:1280px;margin:0 auto;padding:0 32px;
+display:grid;grid-template-columns:1.05fr .95fr;gap:64px;
+align-items:center;position:relative;z-index:2;width:100%;
+}
+.hero-badge{
+display:inline-flex;align-items:center;gap:8px;
+background:var(--white);padding:8px 18px;border-radius:40px;
+font-size:.82rem;font-weight:700;color:var(--pine);
+box-shadow:var(--shadow);margin-bottom:28px;
+border:1px solid rgba(26,58,42,0.08);
+}
+.hero-badge .dot{
+width:8px;height:8px;background:var(--lime);border-radius:50%;
+animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(200,230,58,0.7)}70%{box-shadow:0 0 0 10px rgba(200,230,58,0)}}
+.hero h1{
+font-size:clamp(2.8rem,6vw,4.8rem);
+line-height:1.08;font-weight:900;
+color:var(--pine);letter-spacing:-0.03em;
+margin-bottom:24px;
+}
+.hero h1 .accent{
+position:relative;display:inline-block;color:var(--pine);
+}
+.hero h1 .accent::after{
+content:"";position:absolute;left:-2%;bottom:6%;
+width:104%;height:34%;background:var(--lime);
+z-index:-1;border-radius:4px;transform:rotate(-1.5deg);
+}
+.hero-sub{
+font-size:1.15rem;color:var(--text-light);max-width:520px;
+margin-bottom:40px;line-height:1.8;
+}
+.hero-sub strong{color:var(--pine);font-weight:700}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.btn{
+display:inline-flex;align-items:center;gap:10px;
+padding:15px 32px;border-radius:50px;font-weight:700;
+font-size:.98rem;transition:all .3s ease;cursor:pointer;
+border:none;position:relative;overflow:hidden;
+}
+.btn-primary{
+background:var(--pine);color:var(--cream);
+box-shadow:0 8px 28px rgba(26,58,42,0.28);
+}
+.btn-primary:hover{transform:translateY(-3px);background:var(--pine-light);
+box-shadow:0 16px 40px rgba(26,58,42,0.36)}
+.btn-primary svg{transition:transform .3s}
+.btn-primary:hover svg{transform:translateX(4px)}
+.btn-ghost{
+background:transparent;color:var(--pine);
+border:2px solid rgba(26,58,42,0.18);
+}
+.btn-ghost:hover{border-color:var(--pine);background:rgba(26,58,42,0.04);transform:translateY(-3px)}
+.hero-stats{
+display:flex;gap:48px;margin-top:56px;flex-wrap:wrap;
+}
+.hero-stat .num{
+font-size:2.2rem;font-weight:900;color:var(--pine);
+line-height:1;letter-spacing:-0.02em;
+}
+.hero-stat .num span{color:var(--gold)}
+.hero-stat .label{
+font-size:.82rem;color:var(--text-light);margin-top:8px;font-weight:600;
+}
+
+/* Hero Visual */
+.hero-visual{position:relative;display:flex;justify-content:center}
+.video-frame{
+position:relative;width:100%;max-width:500px;
+border-radius:24px;overflow:hidden;
+box-shadow:var(--shadow-lg);
+background:var(--pine-dark);
+aspect-ratio:4/5;
+border:6px solid var(--white);
+}
+.video-frame-inner{
+position:absolute;inset:0;display:flex;flex-direction:column;
+justify-content:flex-end;padding:32px;
+background:linear-gradient(160deg,#2a5a40 0%,#1a3a2a 60%,#0f2419 100%);
+}
+.video-frame-inner::before{
+content:"";position:absolute;inset:0;
+background:radial-gradient(circle at 30% 20%,rgba(200,230,58,0.25),transparent 50%);
+}
+.play-btn{
+position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+width:80px;height:80px;border-radius:50%;
+background:rgba(200,230,58,0.95);
+display:flex;align-items:center;justify-content:center;
+cursor:pointer;box-shadow:0 0 0 0 rgba(200,230,58,0.6);
+animation:pulse 2.5s infinite;transition:transform .3s;
+z-index:3;
+}
+.play-btn:hover{transform:translate(-50%,-50%) scale(1.08)}
+.play-btn svg{width:28px;height:28px;margin-left:4px}
+.video-caption{
+position:relative;z-index:2;color:var(--cream);
+}
+.video-caption .tag{
+display:inline-block;background:var(--lime);color:var(--pine-dark);
+font-size:.7rem;font-weight:800;padding:4px 12px;border-radius:20px;
+margin-bottom:12px;letter-spacing:.06em;
+}
+.video-caption h3{font-size:1.5rem;font-weight:800;margin-bottom:6px}
+.video-caption p{font-size:.85rem;color:rgba(245,242,232,0.7)}
+.video-frame-deco{
+position:absolute;top:-20px;right:-20px;width:100px;height:100px;
+border:3px solid var(--lime);border-radius:24px;z-index:-1;
+}
+.video-frame-deco2{
+position:absolute;bottom:-24px;left:-24px;width:120px;height:120px;
+background:var(--gold);border-radius:24px;z-index:-1;opacity:.9;
+}
+.floating-card{
+position:absolute;background:var(--white);border-radius:16px;
+padding:14px 20px;box-shadow:var(--shadow-lg);z-index:4;
+display:flex;align-items:center;gap:12px;
+}
+.floating-card.fc1{top:8%;left:-6%;animation:floatY 5s ease-in-out infinite}
+.floating-card.fc2{bottom:14%;right:-8%;animation:floatY 6s ease-in-out infinite reverse}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.fc-icon{
+width:40px;height:40px;border-radius:10px;
+display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.fc-icon.green{background:rgba(200,230,58,0.25)}
+.fc-icon.gold{background:rgba(232,184,75,0.22)}
+.fc-text .big{font-size:1rem;font-weight:800;color:var(--pine);line-height:1.2}
+.fc-text .small{font-size:.72rem;color:var(--text-light);font-weight:600}
+
+/* ===== Marquee ===== */
+.marquee-section{
+background:var(--pine);padding:22px 0;overflow:hidden;
+position:relative;
+}
+.marquee-track{
+display:flex;gap:56px;white-space:nowrap;
+animation:marquee 32s linear infinite;width:max-content;
+}
+.marquee-track:hover{animation-play-state:paused}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-item{
+display:flex;align-items:center;gap:56px;
+font-size:1.1rem;font-weight:800;color:var(--cream);
+letter-spacing:.04em;text-transform:uppercase;
+}
+.marquee-item .separator{color:var(--lime);font-size:1.4rem}
+
+/* ===== Section Common ===== */
+.section{padding:110px 0;position:relative}
+.section-inner{max-width:1280px;margin:0 auto;padding:0 32px}
+.section-head{max-width:680px;margin-bottom:64px}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.eyebrow{
+display:inline-flex;align-items:center;gap:10px;
+font-size:.8rem;font-weight:800;color:var(--pine-light);
+letter-spacing:.18em;text-transform:uppercase;
+margin-bottom:18px;
+}
+.eyebrow::before{
+content:"";width:28px;height:2px;background:var(--lime);
+border-radius:2px;
+}
+.section-head.center .eyebrow::before{display:none}
+.section-head.center .eyebrow{justify-content:center}
+.section-title{
+font-size:clamp(2rem,4vw,3rem);
+font-weight:900;color:var(--pine);line-height:1.15;
+letter-spacing:-0.02em;margin-bottom:20px;
+}
+.section-desc{font-size:1.05rem;color:var(--text-light);line-height:1.85}
+
+/* ===== Services ===== */
+.services{background:var(--cream)}
+.services-grid{
+display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+}
+.service-card{
+background:var(--white);border-radius:24px;padding:40px 34px;
+position:relative;overflow:hidden;
+transition:all .4s cubic-bezier(.2,.7,.3,1);
+border:1px solid rgba(26,58,42,0.06);
+}
+.service-card::before{
+content:"";position:absolute;top:0;left:0;width:100%;height:4px;
+background:linear-gradient(90deg,var(--lime),var(--gold));
+transform:scaleX(0);transform-origin:left;transition:transform .4s;
+}
+.service-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:transparent}
+.service-card:hover::before{transform:scaleX(1)}
+.service-num{
+font-size:.75rem;font-weight:800;color:var(--gold);
+letter-spacing:.1em;margin-bottom:24px;display:block;
+}
+.service-icon{
+width:64px;height:64px;border-radius:18px;
+background:rgba(200,230,58,0.18);
+display:flex;align-items:center;justify-content:center;
+margin-bottom:26px;transition:all .4s;
+}
+.service-card:hover .service-icon{background:var(--pine);transform:rotate(-6deg)}
+.service-icon svg{width:30px;height:30px;transition:all .4s}
+.service-card:hover .service-icon svg{stroke:var(--lime)}
+.service-card h3{font-size:1.3rem;font-weight:800;color:var(--pine);margin-bottom:12px}
+.service-card p{font-size:.94rem;color:var(--text-light);line-height:1.75;margin-bottom:22px}
+.service-tags{display:flex;flex-wrap:wrap;gap:8px}
+.service-tags span{
+font-size:.75rem;font-weight:700;color:var(--pine-light);
+background:rgba(26,58,42,0.05);padding:5px 12px;border-radius:20px;
+}
+
+/* ===== About / Story ===== */
+.about{background:var(--white);overflow:hidden}
+.about-inner{
+max-width:1280px;margin:0 auto;padding:0 32px;
+display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+}
+.about-visual{position:relative}
+.about-img-main{
+border-radius:28px;overflow:hidden;aspect-ratio:4/5;
+background:linear-gradient(150deg,#2a5a40,#0f2419);
+position:relative;box-shadow:var(--shadow-lg);
+}
+.about-img-main::before{
+content:"";position:absolute;inset:0;
+background:radial-gradient(circle at 25% 25%,rgba(200,230,58,0.3),transparent 55%),
+          radial-gradient(circle at 80% 80%,rgba(232,184,75,0.2),transparent 50%);
+}
+.about-img-inner{
+position:absolute;inset:0;display:flex;flex-direction:column;
+justify-content:space-between;padding:40px;
+}
+.about-film-strip{
+position:absolute;top:0;left:24px;bottom:0;width:2px;
+background:repeating-linear-gradient(to bottom,var(--lime) 0,var(--lime) 8px,transparent 8px,transparent 16px);
+opacity:.4;
+}
+.about-quote{
+position:relative;z-index:2;color:var(--cream);
+font-size:1.3rem;font-weight:700;line-height:1.5;max-width:280px;
+}
+.about-quote .mark{color:var(--lime);font-size:2.4rem;line-height:1;display:block;margin-bottom:8px}
+.about-stat-badge{
+position:relative;z-index:2;background:var(--lime);color:var(--pine-dark);
+border-radius:16px;padding:18px 24px;display:inline-flex;
+flex-direction:column;align-self:flex-start;
+}
+.about-stat-badge .big{font-size:2rem;font-weight:900;line-height:1}
+.about-stat-badge .small{font-size:.78rem;font-weight:700;margin-top:4px}
+.about-float{
+position:absolute;right:-28px;top:16%;background:var(--white);
+border-radius:20px;padding:20px 24px;box-shadow:var(--shadow-lg);
+z-index:3;animation:floatY 7s ease-in-out infinite;
+}
+.about-float .label{font-size:.72rem;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:.1em}
+.about-float .value{font-size:1.6rem;font-weight:900;color:var(--pine);line-height:1.1;margin-top:4px}
+.about-float .value span{color:var(--gold)}
+.about-content h2{
+font-size:clamp(1.9rem,3.5vw,2.7rem);
+font-weight:900;color:var(--pine);line-height:1.18;
+letter-spacing:-0.02em;margin-bottom:24px;
+}
+.about-content > p{font-size:1.02rem;color:var(--text-light);line-height:1.85;margin-bottom:20px}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px}
+.about-feature{
+display:flex;gap:14px;align-items:flex-start;
+}
+.about-feature .check{
+width:26px;height:26px;border-radius:50%;background:var(--lime);
+display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px;
+}
+.about-feature .check svg{width:14px;height:14px}
+.about-feature h4{font-size:.98rem;font-weight:800;color:var(--pine);margin-bottom:3px}
+.about-feature p{font-size:.84rem;color:var(--text-light);line-height:1.6}
+
+/* ===== Works ===== */
+.works{background:var(--cream-dark)}
+.works-head{
+display:flex;justify-content:space-between;align-items:flex-end;
+margin-bottom:56px;flex-wrap:wrap;gap:24px;
+}
+.works-filter{display:flex;gap:10px;flex-wrap:wrap}
+.filter-btn{
+background:var(--white);color:var(--text);border:none;
+padding:10px 22px;border-radius:40px;font-weight:700;font-size:.88rem;
+cursor:pointer;transition:all .3s;font-family:inherit;
+}
+.filter-btn:hover{color:var(--pine);transform:translateY(-2px)}
+.filter-btn.active{background:var(--pine);color:var(--cream);box-shadow:0 6px 20px rgba(26,58,42,0.22)}
+.works-grid{
+display:grid;grid-template-columns:repeat(2,1fr);gap:28px;
+}
+.work-card{
+border-radius:24px;overflow:hidden;position:relative;
+background:var(--white);cursor:pointer;
+transition:all .4s cubic-bezier(.2,.7,.3,1);
+box-shadow:0 4px 20px rgba(26,58,42,0.06);
+}
+.work-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.work-thumb{
+aspect-ratio:16/10;position:relative;overflow:hidden;
+display:flex;align-items:flex-end;padding:28px;
+}
+.work-thumb::before{
+position:absolute;inset:0;content:"";
+transition:transform .6s ease;
+}
+.work-card:hover .work-thumb::before{transform:scale(1.06)}
+.wt1::before{background:linear-gradient(135deg,#2a5a40,#0f2419 70%),radial-gradient(circle at 70% 30%,rgba(200,230,58,0.3),transparent)}
+.wt2::before{background:linear-gradient(135deg,#5a4a1a,#241a0f 70%),radial-gradient(circle at 30% 70%,rgba(232,184,75,0.4),transparent)}
+.wt3::before{background:linear-gradient(135deg,#1a3a4a,#0f1f24 70%),radial-gradient(circle at 60% 40%,rgba(200,230,58,0.22),transparent)}
+.wt4::before{background:linear-gradient(135deg,#3a1a2a,#240f18 70%),radial-gradient(circle at 40% 60%,rgba(232,184,75,0.28),transparent)}
+.work-tag{
+position:absolute;top:20px;left:20px;z-index:2;
+background:rgba(245,242,232,0.9);color:var(--pine);
+font-size:.72rem;font-weight:800;padding:5px 14px;border-radius:20px;
+letter-spacing:.04em;
+}
+.work-play{
+position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8);
+width:60px;height:60px;border-radius:50%;background:rgba(200,230,58,0.92);
+display:flex;align-items:center;justify-content:center;z-index:2;
+opacity:0;transition:all .4s;
+}
+.work-card:hover .work-play{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.work-play svg{width:22px;height:22px;margin-left:3px}
+.work-meta{position:relative;z-index:2}
+.work-meta h3{font-size:1.25rem;font-weight:800;color:var(--cream);margin-bottom:6px}
+.work-meta p{font-size:.82rem;color:rgba(245,242,232,0.75);font-weight:600}
+.work-info{padding:22px 28px;display:flex;justify-content:space-between;align-items:center}
+.work-info .stat{display:flex;gap:20px}
+.work-info .stat span{font-size:.82rem;color:var(--text-light);font-weight:600;display:flex;align-items:center;gap:6px}
+.work-info .stat svg{width:15px;height:15px;stroke:var(--gold)}
+.work-arrow{
+width:38px;height:38px;border-radius:50%;background:rgba(26,58,42,0.06);
+display:flex;align-items:center;justify-content:center;transition:all .3s;
+}
+.work-card:hover .work-arrow{background:var(--lime);transform:rotate(-45deg)}
+.work-arrow svg{width:16px;height:16px;transition:all .3s}
+.work-card:hover .work-arrow svg{stroke:var(--pine-dark)}
+
+/* ===== Numbers / Impact ===== */
+.impact{
+background:var(--pine);color:var(--cream);position:relative;overflow:hidden;
+}
+.impact::before{
+content:"";position:absolute;top:-100px;right:-100px;width:500px;height:500px;
+border-radius:50%;background:radial-gradient(circle,rgba(200,230,58,0.14),transparent 70%);
+}
+.impact::after{
+content:"";position:absolute;bottom:-150px;left:-100px;width:400px;height:400px;
+border-radius:50%;background:radial-gradient(circle,rgba(232,184,75,0.12),transparent 70%);
+}
+.impact .section-inner{position:relative;z-index:2}
+.impact .section-title{color:var(--cream)}
+.impact .section-desc{color:rgba(245,242,232,0.7)}
+.impact .eyebrow{color:var(--lime)}
+.impact .eyebrow::before{background:var(--lime)}
+.impact-grid{
+display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:64px;
+}
+.impact-card{
+background:rgba(245,242,232,0.05);border:1px solid rgba(245,242,232,0.1);
+border-radius:24px;padding:36px 28px;text-align:center;
+transition:all .4s;position:relative;overflow:hidden;
+}
+.impact-card:hover{
+background:rgba(245,242,232,0.09);transform:translateY(-6px);
+border-color:rgba(200,230,58,0.35);
+}
+.impact-card .num{
+font-size:clamp(2.2rem,3.5vw,3rem);font-weight:900;color:var(--lime);
+line-height:1;letter-spacing:-0.02em;
+}
+.impact-card .num sup{font-size:.5em;vertical-align:super;color:var(--gold)}
+.impact-card .label{font-size:.9rem;color:rgba(245,242,232,0.75);margin-top:12px;font-weight:600}
+.impact-card .desc{font-size:.76rem;color:rgba(245,242,232,0.45);margin-top:6px}
+
+/* ===== Process ===== */
+.process{background:var(--white)}
+.process-timeline{
+display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:24px;
+position:relative;
+}
+.process-step{position:relative;padding:0 20px}
+.process-step::before{
+content:"";position:absolute;top:32px;left:calc(50% + 28px);right:calc(-50% + 28px);
+height:2px;background:repeating-linear-gradient(90deg,rgba(26,58,42,0.15) 0,rgba(26,58,42,0.15) 6px,transparent 6px,transparent 12px);
+}
+.process-step:last-child::before{display:none}
+.process-dot{
+width:64px;height:64px;border-radius:50%;background:var(--cream);
+border:2px solid rgba(26,58,42,0.1);display:flex;align-items:center;justify-content:center;
+margin:0 auto 24px;font-size:1.1rem;font-weight:900;color:var(--pine);
+position:relative;z-index:2;transition:all .4s;
+}
+.process-step:hover .process-dot{
+background:var(--lime);border-color:var(--lime);transform:scale(1.08);
+box-shadow:0 8px 24px rgba(200,230,58,0.4);
+}
+.process-step h3{font-size:1.1rem;font-weight:800;color:var(--pine);text-align:center;margin-bottom:10px}
+.process-step p{font-size:.86rem;color:var(--text-light);text-align:center;line-height:1.7}
+
+/* ===== Team / Voices ===== */
+.voices{background:var(--cream)}
+.voices-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.voice-card{
+background:var(--white);border-radius:24px;padding:36px;
+transition:all .4s;border:1px solid rgba(26,58,42,0.06);
+display:flex;flex-direction:column;
+}
+.voice-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.voice-quote{color:var(--gold);font-size:2rem;line-height:1;font-family:Georgia,serif;margin-bottom:16px}
+.voice-card > p{font-size:.95rem;color:var(--text);line-height:1.8;margin-bottom:28px;flex:1}
+.voice-person{display:flex;align-items:center;gap:14px;padding-top:22px;border-top:1px solid rgba(26,58,42,0.08)}
+.voice-avatar{
+width:48px;height:48px;border-radius:50%;flex-shrink:0;
+display:flex;align-items:center;justify-content:center;
+font-weight:900;font-size:1rem;color:var(--pine-dark);
+}
+.va1{background:linear-gradient(135deg,var(--lime),var(--gold))}
+.va2{background:linear-gradient(135deg,#8fc9a8,var(--lime))}
+.va3{background:linear-gradient(135deg,var(--gold),#f0d98a)}
+.voice-person .name{font-weight:800;color:var(--pine);font-size:.95rem}
+.voice-person .role{font-size:.78rem;color:var(--text-light);font-weight:600}
+
+/* ===== Journal ===== */
+.journal{background:var(--white)}
+.journal-list{display:flex;flex-direction:column;gap:0}
+.journal-item{
+display:grid;grid-template-columns:120px 1fr auto;gap:32px;align-items:center;
+padding:32px 0;border-bottom:1px solid rgba(26,58,42,0.1);
+transition:all .3s;cursor:pointer;
+}
+.journal-item:first-child{border-top:1px solid rgba(26,58,42,0.1)}
+.journal-item:hover{padding-left:16px}
+.journal-date{font-size:.85rem;font-weight:700;color:var(--text-light)}
+.journal-date .day{font-size:1.3rem;color:var(--pine);display:block;line-height:1.2}
+.journal-main h3{font-size:1.15rem;font-weight:800;color:var(--pine);margin-bottom:6px;transition:color .3s}
+.journal-item:hover .journal-main h3{color:var(--pine-light)}
+.journal-main p{font-size:.88rem;color:var(--text-light)}
+.journal-cat{
+font-size:.75rem;font-weight:800;color:var(--pine-light);
+background:rgba(200,230,58,0.25);padding:6px 16px;border-radius:20px;
+white-space:nowrap;
+}
+
+/* ===== CTA ===== */
+.cta-section{padding:0 0 110px;background:var(--white)}
+.cta-box{
+max-width:1280px;margin:0 auto;padding:0 32px;
+}
+.cta-inner{
+background:linear-gradient(135deg,var(--pine) 0%,var(--pine-light) 100%);
+border-radius:36px;padding:80px 64px;position:relative;overflow:hidden;
+box-shadow:var(--shadow-lg);
+}
+.cta-inner::before{
+content:"";position:absolute;top:-80px;right:-40px;width:360px;height:360px;
+border-radius:50%;background:radial-gradient(circle,rgba(200,230,58,0.25),transparent 70%);
+}
+.cta-inner::after{
+content:"";position:absolute;bottom:-120px;left:20%;width:300px;height:300px;
+border-radius:50%;background:radial-gradient(circle,rgba(232,184,75,0.2),transparent 70%);
+}
+.cta-content{position:relative;z-index:2;max-width:640px}
+.cta-content h2{
+font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--cream);
+line-height:1.15;letter-spacing:-0.02em;margin-bottom:20px;
+}
+.cta-content h2 span{color:var(--lime)}
+.cta-content p{font-size:1.05rem;color:rgba(245,242,232,0.75);line-height:1.8;margin-bottom:36px}
+.cta-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.cta-btn-primary{
+background:var(--lime);color:var(--pine-dark);
+padding:16px 36px;border-radius:50px;font-weight:800;font-size:1rem;
+display:inline-flex;align-items:center;gap:10px;transition:all .3s;
+box-shadow:0 8px 28px rgba(200,230,58,0.35);
+}
+.cta-btn-primary:hover{transform:translateY(-3px);background:var(--lime-soft);box-shadow:0 16px 40px rgba(200,230,58,0.5)}
+.cta-btn-ghost{
+color:var(--cream);border:2px solid rgba(245,242,232,0.25);
+padding:14px 34px;border-radius:50px;font-weight:700;font-size:1rem;
+transition:all .3s;
+}
+.cta-btn-ghost:hover{border-color:var(--lime);color:var(--lime);transform:translateY(-3px)}
+.cta-contact-info{
+position:absolute;right:64px;bottom:64px;z-index:2;text-align:right;
+}
+.cta-contact-info .label{font-size:.75rem;color:rgba(245,242,232,0.55);font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.cta-contact-info .value{font-size:1.2rem;font-weight:800;color:var(--lime)}
+
+/* ===== Footer ===== */
+.site-footer{background:var(--pine-dark);color:rgba(245,242,232,0.7);padding:72px 0 32px;position:relative;overflow:hidden}
+.footer-inner{max-width:1280px;margin:0 auto;padding:0 32px}
+.footer-top{
+display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;
+padding-bottom:56px;border-bottom:1px solid rgba(245,242,232,0.1);
+}
+.footer-brand .logo{color:var(--cream);margin-bottom:20px}
+.footer-brand .logo-text small{color:rgba(245,242,232,0.45)}
+.footer-brand p{font-size:.9rem;line-height:1.8;max-width:320px;color:rgba(245,242,232,0.55)}
+.footer-social{display:flex;gap:12px;margin-top:24px}
+.footer-social a{
+width:40px;height:40px;border-radius:50%;background:rgba(245,242,232,0.08);
+display:flex;align-items:center;justify-content:center;transition:all .3s;
+}
+.footer-social a:hover{background:var(--lime);transform:translateY(-3px)}
+.footer-social a svg{width:18px;height:18px}
+.footer-social a:hover svg{stroke:var(--pine-dark)}
+.footer-col h4{font-size:.95rem;font-weight:800;color:var(--cream);margin-bottom:20px;letter-spacing:.02em}
+.footer-col ul li{margin-bottom:12px}
+.footer-col ul li a{font-size:.88rem;color:rgba(245,242,232,0.6);transition:all .3s}
+.footer-col ul li a:hover{color:var(--lime);padding-left:4px}
+.footer-bottom{
+display:flex;justify-content:space-between;align-items:center;
+padding-top:32px;flex-wrap:wrap;gap:16px;
+}
+.footer-bottom p{font-size:.82rem;color:rgba(245,242,232,0.4)}
+.footer-bottom .links{display:flex;gap:24px}
+.footer-bottom .links a{font-size:.82rem;color:rgba(245,242,232,0.4);transition:color .3s}
+.footer-bottom .links a:hover{color:var(--lime)}
+
+/* ===== Reveal Animation ===== */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.08s}
+.reveal-delay-2{transition-delay:.16s}
+.reveal-delay-3{transition-delay:.24s}
+.reveal-delay-4{transition-delay:.32s}
+
+/* ===== Back to top ===== */
+.back-top{
+position:fixed;bottom:32px;right:32px;width:48px;height:48px;
+border-radius:50%;background:var(--pine);color:var(--lime);
+display:flex;align-items:center;justify-content:center;
+cursor:pointer;z-index:900;opacity:0;visibility:hidden;
+transition:all .4s;box-shadow:0 8px 24px rgba(26,58,42,0.3);border:none;
+}
+.back-top.show{opacity:1;visibility:visible}
+.back-top:hover{transform:translateY(-4px);background:var(--pine-light)}
+.back-top svg{width:20px;height:20px}
+
+/* ===== Modal ===== */
+.modal-overlay{
+position:fixed;inset:0;background:rgba(15,36,25,0.85);backdrop-filter:blur(8px);
+z-index:2000;display:flex;align-items:center;justify-content:center;padding:24px;
+opacity:0;visibility:hidden;transition:all .35s;
+}
+.modal-overlay.show{opacity:1;visibility:visible}
+.modal-box{
+background:var(--cream);border-radius:24px;max-width:560px;width:100%;
+padding:40px;position:relative;transform:scale(.94) translateY(20px);
+transition:all .35s;box-shadow:var(--shadow-lg);
+}
+.modal-overlay.show .modal-box{transform:scale(1) translateY(0)}
+.modal-close{
+position:absolute;top:20px;right:20px;width:36px;height:36px;
+border-radius:50%;background:rgba(26,58,42,0.06);border:none;cursor:pointer;
+display:flex;align-items:center;justify-content:center;transition:all .3s;
+}
+.modal-close:hover{background:var(--pine);transform:rotate(90deg)}
+.modal-close svg{width:18px;height:18px}
+.modal-close:hover svg{stroke:var(--lime)}
+.modal-box h3{font-size:1.5rem;font-weight:900;color:var(--pine);margin-bottom:8px}
+.modal-box .sub{font-size:.9rem;color:var(--text-light);margin-bottom:24px}
+.modal-box .field{margin-bottom:16px}
+.modal-box label{display:block;font-size:.82rem;font-weight:700;color:var(--pine);margin-bottom:6px}
+.modal-box input,.modal-box textarea{
+width:100%;padding:12px 16px;border-radius:12px;border:1px solid rgba(26,58,42,0.15);
+background:var(--white);font-family:inherit;font-size:.92rem;color:var(--text);
+transition:all .3s;resize:vertical;
+}
+.modal-box input:focus,.modal-box textarea:focus{outline:none;border-color:var(--lime);box-shadow:0 0 0 3px rgba(200,230,58,0.25)}
+.modal-box button[type=submit]{
+width:100%;padding:14px;border-radius:12px;background:var(--pine);color:var(--cream);
+font-weight:800;font-size:.98rem;border:none;cursor:pointer;transition:all .3s;
+font-family:inherit;margin-top:8px;
+}
+.modal-box button[type=submit]:hover{background:var(--pine-light);transform:translateY(-2px)}
+
+@media(max-width:1024px){
+.hero-inner{grid-template-columns:1fr;gap:56px;text-align:left}
+.hero-visual{order:-1;max-width:420px;margin:0 auto}
+.hero-stats{gap:36px}
+.services-grid{grid-template-columns:repeat(2,1fr)}
+.about-inner{grid-template-columns:1fr;gap:56px}
+.about-visual{max-width:440px;margin:0 auto}
+.works-grid{grid-template-columns:1fr}
+.impact-grid{grid-template-columns:repeat(2,1fr)}
+.process-timeline{grid-template-columns:repeat(2,1fr);gap:40px 0}
+.process-step:nth-child(2)::before{display:none}
+.voices-grid{grid-template-columns:1fr}
+.footer-top{grid-template-columns:1fr 1fr;gap:40px}
+.cta-inner{padding:56px 40px}
+.cta-contact-info{position:static;text-align:left;margin-top:40px}
+}
+@media(max-width:768px){
+.main-nav{
+position:fixed;top:0;right:-100%;width:80%;max-width:340px;height:100vh;
+background:var(--cream);flex-direction:column;justify-content:center;
+gap:28px;padding:40px;transition:right .4s ease;box-shadow:-8px 0 40px rgba(26,58,42,0.15);
+}
+.main-nav.open{right:0}
+.main-nav a{font-size:1.1rem}
+.mobile-toggle{display:block;z-index:1001}
+.mobile-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.mobile-toggle.active span:nth-child(2){opacity:0}
+.mobile-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.section{padding:80px 0}
+.section-inner{padding:0 24px}
+.header-inner{padding:0 24px}
+.hero{padding:100px 0 60px}
+.hero-inner{padding:0 24px}
+.hero h1{font-size:2.6rem}
+.hero-stats{gap:28px}
+.hero-stat .num{font-size:1.8rem}
+.services-grid{grid-template-columns:1fr}
+.impact-grid{grid-template-columns:1fr 1fr;gap:16px}
+.impact-card{padding:28px 20px}
+.process-timeline{grid-template-columns:1fr;gap:36px}
+.process-step::before{display:none}
+.journal-item{grid-template-columns:1fr;gap:12px;position:relative}
+.journal-cat{position:absolute;top:32px;right:0}
+.cta-inner{padding:44px 28px}
+.cta-contact-info{margin-top:36px}
+.footer-top{grid-template-columns:1fr;gap:36px}
+.footer-bottom{flex-direction:column;align-items:flex-start}
+.about-float{right:0;padding:14px 18px}
+.about-float .value{font-size:1.3rem}
+.floating-card.fc1{left:-2%}
+.floating-card.fc2{right:-2%}
+.back-top{bottom:20px;right:20px;width:44px;height:44px}
+}
+@media(max-width:480px){
+.hero h1{font-size:2.1rem}
+.hero-actions{flex-direction:column;align-items:stretch}
+.btn{justify-content:center}
+.hero-stats{gap:24px}
+.impact-grid{grid-template-columns:1fr}
+.about-features{grid-template-columns:1fr}
+.floating-card{display:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="siteHeader">
+<div class="header-inner">
+<a href="#" class="logo">
+<div class="logo-mark">
+<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="2" y="2" width="40" height="40" rx="12" fill="#1a3a2a"/>
+<path d="M16 30V14h7.5c4 0 6.5 2 6.5 5.2 0 2.2-1.2 3.8-3.2 4.5 2.6.5 4.2 2.3 4.2 4.8 0 3.4-2.8 5.5-7 5.5H16zm4-9.5h3c1.8 0 2.8-.9 2.8-2.4 0-1.5-1-2.3-2.8-2.3h-3v4.7zm0 6.7h3.4c2 0 3.1-1 3.1-2.6s-1.1-2.5-3.1-2.5H20v5.1z" fill="#c8e63a"/>
+<circle cx="34" cy="12" r="3" fill="#e8b84b"/>
+</svg>
+</div>
+<div class="logo-text">
+菠萝传媒
+<small>PINEAPPLE MEDIA</small>
+</div>
+</a>
+<nav class="main-nav" id="mainNav">
+<a href="#services">业务服务</a>
+<a href="#about">关于我们</a>
+<a href="#works">作品案例</a>
+<a href="#process">制作流程</a>
+<a href="#journal">品牌手记</a>
+<a href="#contact" class="nav-cta">开始合作</a>
+</nav>
+<button class="mobile-toggle" id="mobileToggle" aria-label="菜单">
+<span></span><span></span><span></span>
+</button>
+</div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+<div class="hero-bg-grid"></div>
+<div class="hero-orb o1"></div>
+<div class="hero-orb o2"></div>
+<div class="hero-inner">
+<div class="hero-content">
+<div class="hero-badge">
+<span class="dot"></span>2024 全新品牌影像企划 · 持续开放合作
+</div>
+<h1>菠萝传媒<span class="accent">让镜头说话</span></h1>
+<p class="hero-sub">我们是一家专注于<strong>视频内容制作与品牌传播</strong>的创意机构。从品牌短片、纪录影像到短视频营销与直播运营，菠萝传媒用真实的镜头语言，把每一个值得被看见的故事，讲得动人、记得住。</p>
+<div class="hero-actions">
+<a href="#contact" class="btn btn-primary">
+预约品牌沟通
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+</a>
+<a href="#works" class="btn btn-ghost">
+浏览作品集
+</a>
+</div>
+<div class="hero-stats">
+<div class="hero-stat">
+<div class="num" data-count="380"><span>+</span></div>
+<div class="label">累计交付项目</div>
+</div>
+<div class="hero-stat">
+<div class="num" data-count="120">+</div>
+<div class="label">长期合作品牌</div>
+</div>
+<div class="hero-stat">
+<div class="num" data-count="26">亿<span>+</span></div>
+<div class="label">全网内容播放</div>
+</div>
+</div>
+</div>
+<div class="hero-visual">
+<div class="video-frame">
+<div class="video-frame-inner">
+<button class="play-btn" id="heroPlay" aria-label="播放品牌短片">
+<svg viewBox="0 0 24 24" fill="#1a3a2a"><path d="M8 5v14l11-7z"/></svg>
+</button>
+<div class="video-caption">
+<span class="tag">品牌短片 · 2024</span>
+<h3>《生长的城市》</h3>
+<p>一座城市与它的十二个清晨</p>
+</div>
+</div>
+</div>
+<div class="video-frame-deco"></div>
+<div class="video-frame-deco2"></div>
+<div class="floating-card fc1">
+<div class="fc-icon green">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+</div>
+<div class="fc-text">
+<div class="big">4K / 8K</div>
+<div class="small">电影级制作标准</div>
+</div>
+</div>
+<div class="floating-card fc2">
+<div class="fc-icon gold">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b8860b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+</div>
+<div class="fc-text">
+<div class="big">98.6%</div>
+<div class="small">客户满意度回访</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee-section">
+<div class="marquee-track" id="marqueeTrack">
+<div class="marquee-item">品牌短片<span class="separator">✦</span></div>
+<div class="marquee-item">纪录片制作<span class="separator">✦</span></div>
+<div class="marquee-item">短视频营销<span class="separator">✦</span></div>
+<div class="marquee-item">直播运营<span class="separator">✦</span></div>
+<div class="marquee-item">创意策划<span class="separator">✦</span></div>
+<div class="marquee-item">后期调色<span class="separator">✦</span></div>
+<div class="marquee-item">品牌短片<span class="separator">✦</span></div>
+<div class="marquee-item">纪录片制作<span class="separator">✦</span></div>
+<div class="marquee-item">短视频营销<span class="separator">✦</span></div>
+<div class="marquee-item">直播运营<span class="separator">✦</span></div>
+<div class="marquee-item">创意策划<span class="separator">✦</span></div>
+<div class="marquee-item">后期调色<span class="separator">✦</span></div>
+</div>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<section class="section services" id="services">
+<div class="section-inner">
+<div class="section-head reveal">
+<div class="eyebrow">Our Services</div>
+<h2 class="section-title">从创意到成片，<br>一站式视频内容解决方案</h2>
+<p class="section-desc">菠萝传媒以导演思维贯穿始终，为品牌提供覆盖策划、拍摄、后期与传播的完整链路。我们不生产模板化的内容，只交付有记忆点的影像。</p>
+</div>
+<div class="services-grid">
+<div class="service-card reveal">
+<span class="service-num">01 / BRAND FILM</span>
+<div class="service-icon">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20M6 6v-4M18 6v-4"/></svg>
+</div>
+<h3>品牌短片</h3>
+<p>从品牌定位出发，用电影化的叙事与画面，构建消费者对品牌的第一印象。适合企业形象片、产品发布、周年纪念等场景。</p>
+<div class="service-tags">
+<span>形象片</span><span>产品片</span><span>发布会影像</span>
+</div>
+</div>
+<div class="service-card reveal reveal-delay-1">
+<span class="service-num">02 / DOCUMENTARY</span>
+<div class="service-icon">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+</div>
+<h3>纪录影像</h3>
+<p>以真实为底色，记录人物、土地与时代。我们擅长在长期跟拍中捕捉有温度的细节，让纪实内容拥有直抵人心的力量。</p>
+<div class="service-tags">
+<span>人物纪录</span><span>品牌纪实</span><span>城市影像</span>
+</div>
+</div>
+<div class="service-card reveal reveal-delay-2">
+<span class="service-num">03 / SHORT VIDEO</span>
+<div class="service-icon">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4M13 6l-2 5h3l-2 5"/></svg>
+</div>
+<h3>短视频营销</h3>
+<p>面向抖音、视频号、小红书等平台的内容生产与账号运营。以数据驱动选题，以创意撬动自然流量，让好内容真正被看见。</p>
+<div class="service-tags">
+<span>内容策划</span><span>账号代运营</span><span>爆款孵化</span>
+</div>
+</div>
+<div class="service-card reveal">
+<span class="service-num">04 / LIVE</span>
+<div class="service-icon">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9-9 9 9 0 0 1 9 9"/><path d="M4 13a9 9 0 0 0 9 9 9 9 0 0 0 9-9"/><circle cx="12" cy="12" r="2"/></svg>
+</div>
+<h3>直播运营</h3>
+<p>覆盖直播策划、场景搭建、导播执行与流量投放的全流程服务。稳定的技术保障与内容节奏，让每一场直播都成为品牌资产。</p>
+<div class="service-tags">
+<span>电商直播</span><span>品牌直播</span><span>活动转播</span>
+</div>
+</div>
+<div class="service-card reveal reveal-delay-1">
+<span class="service-num">05 / POST</span>
+<div class="service-icon">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+</div>
+<h3>后期制作</h3>
+<p>拥有独立调色与合成团队，提供剪辑、调色、混音、特效包装等专业后期服务，让原始素材最终成为可交付的成熟作品。</p>
+<div class="service-tags">
+<span>剪辑</span><span>调色</span><span>混音包装</span>
+</div>
+</div>
+<div class="service-card reveal reveal-delay-2">
+<span class="service-num">06 / CREATIVE</span>
+<div class="service-icon">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+</div>
+<h3>创意策划</h3>
+<p>从品牌策略到内容脚本，我们提供前端的创意咨询与脚本开发服务，帮助品牌在拍摄之前，就想清楚要说什么、怎么说。</p>
+<div class="service-tags">
+<span>策略咨询</span><span>脚本开发</span><span>分镜设计</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section about" id="about">
+<div class="about-inner">
+<div class="about-visual reveal">
+<div class="about-img-main">
+<div class="about-film-strip"></div>
+<div class="about-img-inner">
+<div class="about-quote">
+<span class="mark">“</span>
+好的影像不是炫技，而是让人看见真实。
+</div>
+<div class="about-stat-badge">
+<span class="big">9年</span>
+<span class="small">镜头背后的坚持</span>
+</div>
+</div>
+</div>
+<div class="about-float">
+<div class="label">团队构成</div>
+<div class="value">48<span>人</span></div>
+</div>
+</div>
+<div class="about-content reveal reveal-delay-1">
+<div class="eyebrow">About Pineapple Media</div>
+<h2>一群相信影像力量的人，<br>把热爱做成了事业</h2>
+<p>菠萝传媒成立于2015年，总部位于杭州，团队由导演、编剧、摄影、剪辑、调色、运营等专业人才组成。九年来，我们服务过消费品牌、文旅机构、地产企业、公益组织与个人创作者，累计交付视频项目380余个。</p>
+<p>我们始终认为，影像的價值在于真实与共鸣。因此每一支片子，我们都愿意花时间去理解客户真正想表达的东西，再用专业的视听语言把它放大。菠萝传媒不追求流水线式的产出，更在意每一次合作之后，客户是否愿意继续把故事交给我们。</p>
+<div class="about-features">
+<div class="about-feature">
+<div class="check">
+<svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+</div>
+<div>
+<h4>全链路团队</h4>
+<p>策划到成片，内部闭环</p>
+</div>
+</div>
+<div class="about-feature">
+<div class="check">
+<svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+</div>
+<div>
+<h4>电影级设备</h4>
+<p>自有摄影与灯光器材库</p>
+</div>
+</div>
+<div class="about-feature">
+<div class="check">
+<svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+</div>
+<div>
+<h4>数据化传播</h4>
+<p>内容与投放协同优化</p>
+</div>
+</div>
+<div class="about-feature">
+<div class="check">
+<svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+</div>
+<div>
+<h4>长期陪伴</h4>
+<p>年框合作，持续共创</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== WORKS ===== -->
+<section class="section works" id="works">
+<div class="section-inner">
+<div class="works-head reveal">
+<div class="section-head" style="margin-bottom:0">
+<div class="eyebrow">Selected Works</div>
+<h2 class="section-title">近期作品</h2>
+<p class="section-desc">每一支片子都是一次认真的表达，这里收录了菠萝传媒近年的部分代表作。</p>
+</div>
+<div class="works-filter" id="worksFilter">
+<button class="filter-btn active" data-filter="all">全部</button>
+<button class="filter-btn" data-filter="brand">品牌短片</button>
+<button class="filter-btn" data-filter="doc">纪录影像</button>
+<button class="filter-btn" data-filter="short">短视频</button>
+</div>
+</div>
+<div class="works-grid" id="worksGrid">
+<div class="work-card reveal" data-category="brand" data-title="《生长的城市》城市形象短片">
+<div class="work-thumb wt1">
+<span class="work-tag">品牌短片</span>
+<div class="work-play">
+<svg viewBox="0 0 24 24" fill="#1a3a2a"><path d="M8 5v14l11-7z"/></svg>
+</div>
+<div class="work-meta">
+<h3>《生长的城市》</h3>
+<p>城市形象短片 · 杭州</p>
+</div>
+</div>
+<div class="work-info">
+<div class="stat">
+<span>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+1280万播放
+</span>
+<span>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+4.2万
+</span>
+</div>
+<div class="work-arrow">
+<svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+</div>
+</div>
+</div>
+<div class="work-card reveal reveal-delay-1" data-category="doc" data-title="《守艺》非遗手艺人纪录">
+<div class="work-thumb wt2">
+<span class="work-tag">纪录影像</span>
+<div class="work-play">
+<svg viewBox="0 0 24 24" fill="#1a3a2a"><path d="M8 5v14l11-7z"/></svg>
+</div>
+<div class="work-meta">
+<h3>《守艺》</h3>
+<p>非遗手艺人纪实 · 龙泉</p>
+</div>
+</div>
+<div class="work-info">
+<div class="stat">
+<span>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+862万播放
+</span>
+<span>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+6.8万
+</span>
+</div>
+<div class="work-arrow">
+<svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+</div>
+</div>
+</div>
+<div class="work-card reveal" data-category="short" data-title="茶品牌短视频系列《一盏之间》">
+<div class="work-thumb wt3">
+<span class="work-tag">短视频</span>
+<div class="work-play">
+<svg viewBox="0 0 24 24" fill="#1a3a2a"><path d="M8 5v14l11-7z"/></svg>
+</div>
+<div class="work-meta">
+<h3>《一盏之间》</h3>
+<p>茶品牌短视频系列 · 12集</p>
+</div>
+</div>
+<div class="work-info">
+<div class="stat">
+<span>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+2360万播放
+</span>
+<span>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+12.5万
+</span>
+</div>
+<div class="work-arrow">
+<svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+</div>
+</div>
+</div>
+<div class="work-card reveal reveal-delay-1" data-category="brand" data-title="新消费品牌年度形象片《未定义》">
+<div class="work-thumb wt4">
+<span class="work-tag">品牌短片</span>
+<div class="work-play">
+<svg viewBox="0 0 24 24" fill="#1a3a2a"><path d="M8 5v14l11-7z"/></svg>
+</div>
+<div class="work-meta">
+<h3>《未定义》</h3>
+<p>新消费品牌年度形象片</p>
+</div>
+</div>
+<div class="work-info">
+<div class="stat">
+<span>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+1560万播放
+</span>
+<span>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+3.9万
+</span>
+</div>
+<div class="work-arrow">
+<svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== IMPACT ===== -->
+<section class="section impact">
+<div class="section-inner">
+<div class="section-head center reveal">
+<div class="eyebrow">By The Numbers</div>
+<h2 class="section-title">用数据见证内容的力量</h2>
+<p class="section-desc">九年间，菠萝传媒与超过120个品牌并肩合作，作品在全网累计获得26亿次播放。这些数字背后，是一次次对内容品质的坚持。</p>
+</div>
+<div class="impact-grid">
+<div class="impact-card reveal">
+<div class="num" data-count="380">380<sup>+</sup></div>
+<div class="label">交付视频项目</div>
+<div class="desc">横跨品牌、纪录、短视频</div>
+</div>
+<div class="impact-card reveal reveal-delay-1">
+<div class="num" data-count="120">120<sup>+</sup></div>
+<div class="label">合作品牌客户</div>
+<div class="desc">含28家长期年框伙伴</div>
+</div>
+<div class="impact-card reveal reveal-delay-2">
+<div class="num" data-count="26">26<sup>亿+</sup></div>
+<div class="label">全网累计播放</div>
+<div class="desc">主流平台内容总曝光</div>
+</div>
+<div class="impact-card reveal reveal-delay-3">
+<div class="num" data-count="48">48<sup>人</sup></div>
+<div class="label">全职创意团队</div>
+<div class="desc">策划·拍摄·后期·运营</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="section process" id="process">
+<div class="section-inner">
+<div class="section-head center reveal">
+<div class="eyebrow">How We Work</div>
+<h2 class="section-title">四步走，把想法变成作品</h2>
+<p class="section-desc">从第一次沟通到最终交付，菠萝传媒用标准化的流程保障创意的完整落地，同时保留足够的灵活度应对变化。</p>
+</div>
+<div class="process-timeline">
+<div class="process-step reveal">
+<div class="process-dot">01</div>
+<h3>需求洞察</h3>
+<p>深入理解品牌定位、目标人群与传播目标，形成内容策略与创意方向。</p>
+</div>
+<div class="process-step reveal reveal-delay-1">
+<div class="process-dot">02</div>
+<h3>创意脚本</h3>
+<p>输出创意脚本、分镜与拍摄方案，确认视觉风格与制作规格。</p>
+</div>
+<div class="process-step reveal reveal-delay-2">
+<div class="process-dot">03</div>
+<h3>拍摄制作</h3>
+<p>专业团队进场执行，导演、摄影、灯光、制片各司其职，保障现场效率。</p>
+</div>
+<div class="process-step reveal reveal-delay-3">
+<div class="process-dot">04</div>
+<h3>后期交付</h3>
+<p>剪辑、调色、混音与包装，多轮反馈优化，交付可直接使用的成片。</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== VOICES ===== -->
+<section class="section voices">
+<div class="section-inner">
+<div class="section-head center reveal">
+<div class="eyebrow">Voices</div>
+<h2 class="section-title">合作方怎么说</h2>
+<p class="section-desc">来自品牌方与合作伙伴的真实反馈，是菠萝传媒最珍视的评价。</p>
+</div>
+<div class="voices-grid">
+<div class="voice-card reveal">
+<div class="voice-quote">“</div>
+<p>和菠萝传媒合作了三年，最难得的是他们愿意花时间理解我们品牌的底色，而不是急着给模板方案。每次成片出来，团队内部都会有一轮讨论，这在视频供应商里并不多见。</p>
+<div class="voice-person">
+<div class="voice-avatar va1">林</div>
+<div>
+<div class="name">林女士</div>
+<div class="role">某消费品牌 市场总监</div>
+</div>
+</div>
+</div>
+<div class="voice-card reveal reveal-delay-1">
+<div class="voice-quote">“</div>
+<p>《守艺》这个项目我们跟拍了将近半年，菠萝传媒的团队在村子里一住就是两周。成片出来的时候，几位老手艺人都红了眼眶。这种耐心，是现在很少见的做内容的方式。</p>
+<div class="voice-person">
+<div class="voice-avatar va2">陈</div>
+<div>
+<div class="name">陈先生</div>
+<div class="role">文旅机构 项目负责人</div>
+</div>
+</div>
+</div>
+<div class="voice-card reveal reveal-delay-2">
+<div class="voice-quote">“</div>
+<p>短视频板块是他们帮我们跑通的，从选题会到复盘数据，节奏很稳。半年时间账号从零做到二十多万粉，最重要的是内容调性一直没跑偏，这是我觉得最专业的地方。</p>
+<div class="voice-person">
+<div class="voice-avatar va3">周</div>
+<div>
+<div class="name">周女士</div>
+<div class="role">新锐茶饮品牌 创始人</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== JOURNAL ===== -->
+<section class="section journal" id="journal">
+<div class="section-inner">
+<div class="section-head reveal">
+<div class="eyebrow">Journal</div>
+<h2 class="section-title">品牌手记</h2>
+<p class="section-desc">记录我们在创作过程中的思考、方法与幕后故事。</p>
+</div>
+<div class="journal-list">
+<div class="journal-item reveal">
+<div class="journal-date">
+<span class="day">12</span>2024.05
+</div>
+<div class="journal-main">
+<h3>一支品牌短片，从脚本到成片要经历什么</h3>
+<p>拆解菠萝传媒的内部制作流程，聊聊那些成片之外的功夫。</p>
+</div>
+<span class="journal-cat">制作方法</span>
+</div>
+<div class="journal-item reveal">
+<div class="journal-date">
+<span class="day">28</span>2024.04
+</div>
+<div class="journal-main">
+<h3>纪录片拍摄手记：在龙泉的十四天</h3>
+<p>关于《守艺》的幕后，关于那些被时间打磨的手艺人。</p>
+</div>
+<span class="journal-cat">幕后故事</span>
+</div>
+<div class="journal-item reveal">
+<div class="journal-date">
+<span class="day">09</span>2024.04
+</div>
+<div class="journal-main">
+<h3>短视频时代，品牌还需要长视频吗</h3>
+<p>内容的长度与深度无关，但品牌资产的积累需要时间。</p>
+</div>
+<span class="journal-cat">内容观点</span>
+</div>
+<div class="journal-item reveal">
+<div class="journal-date">
+<span class="day">21</span>2024.03
+</div>
+<div class="journal-main">
+<h3>调色师的一天：颜色如何为叙事服务</h3>
+<p>走进菠萝传媒的后期工作室，看看一部片子的最终质感从何而来。</p>
+</div>
+<span class="journal-cat">技术分享</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section" id="contact">
+<div class="cta-box">
+<div class="cta-inner reveal">
+<div class="cta-content">
+<h2>有一个故事，<br>想讲给更多人听？</h2>
+<p>无论是一支品牌短片、一部纪录影像，还是从零开始的短视频账号，菠萝传媒都愿意成为你的内容伙伴。留下联系方式，我们会在一个工作日内与你联系。</p>
+<div class="cta-actions">
+<button class="cta-btn-primary" id="openModal">
+预约品牌沟通
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+</button>
+<a href="#works" class="cta-btn-ghost">先看看作品</a>
+</div>
+</div>
+<div class="cta-contact-info">
+<div class="label">商务合作</div>
+<div class="value">hello@pineapple.media</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-top">
+<div class="footer-brand">
+<a href="#" class="logo">
+<div class="logo-mark">
+<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="2" y="2" width="40" height="40" rx="12" fill="#c8e63a"/>
+<path d="M16 30V14h7.5c4 0 6.5 2 6.5 5.2 0 2.2-1.2 3.8-3.2 4.5 2.6.5 4.2 2.3 4.2 4.8 0 3.4-2.8 5.5-7 5.5H16zm4-9.5h3c1.8 0 2.8-.9 2.8-2.4 0-1.5-1-2.3-2.8-2.3h-3v4.7zm0 6.7h3.4c2 0 3.1-1 3.1-2.6s-1.1-2.5-3.1-2.5H20v5.1z" fill="#1a3a2a"/>
+<circle cx="34" cy="12" r="3" fill="#1a3a2a"/>
+</svg>
+</div>
+<div class="logo-text">
+菠萝传媒
+<small>PINEAPPLE MEDIA</small>
+</div>
+</a>
+<p>用真实的镜头语言，讲述每一个值得被看见的品牌故事。菠萝传媒，与你的内容一起生长。</p>
+<div class="footer-social">
+<a href="#" aria-label="微博">
+<svg viewBox="0 0 24 24" fill="none" stroke="#c8e63a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+</a>
+<a href="#" aria-label="视频号">
+<svg viewBox="0 0 24 24" fill="none" stroke="#c8e63a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M10 9l5 3-5 3V9z"/></svg>
+</a>
+<a href="#" aria-label="小红书">
+<svg viewBox="0 0 24 24" fill="none" stroke="#c8e63a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z"/><path d="M9 12h6M12 9v6"/></svg>
+</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>业务服务</h4>
+<ul>
+<li><a href="#services">品牌短片</a></li>
+<li><a href="#services">纪录影像</a></li>
+<li><a href="#services">短视频营销</a></li>
+<li><a href="#services">直播运营</a></li>
+<li><a href="#services">后期制作</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>关于我们</h4>
+<ul>
+<li><a href="#about">品牌介绍</a></li>
+<li><a href="#works">作品案例</a></li>
+<li><a href="#process">制作流程</a></li>
+<li><a href="#journal">品牌手记</a></li>
+<li><a href="#contact">加入我们</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>联系合作</h4>
+<ul>
+<li><a href="#contact">hello@pineapple.media</a></li>
+<li><a href="#contact">+86 571 8888 6666</a></li>
+<li><a href="#contact">杭州市西湖区文三路</a></li>
+<li><a href="#contact">工作日 09:30 - 18:30</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 菠萝传媒 PINEAPPLE MEDIA. 保留所有权利。</p>
+<div class="links">
+<a href="#">隐私政策</a>
+<a href="#">服务条款</a>
+<a href="#">网站地图</a>
+</div>
+</div>
+</div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="返回顶部">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="modalOverlay">
+<div class="modal-box">
+<button class="modal-close" id="modalClose" aria-label="关闭">
+<svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+</button>
+<h3>预约品牌沟通</h3>
+<p class="sub">留下你的信息，菠萝传媒的内容顾问会在一个工作日内与你联系。</p>
+<form id="contactForm">
+<div class="field">
+<label for="cname">你的称呼</label>
+<input type="text" id="cname" placeholder="如何称呼你" required>
+</div>
+<div class="field">
+<label for="cphone">联系方式</label>
+<input type="text" id="cphone" placeholder="手机号或邮箱" required>
+</div>
+<div class="field">
+<label for="cmsg">想聊的项目</label>
+<textarea id="cmsg" rows="3" placeholder="简单描述你的需求，例如品牌短片、短视频代运营等"></textarea>
+</div>
+<button type="submit">提交预约</button>
+</form>
+</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+// ===== Scroll Progress =====
+var scrollProgress = document.getElementById('scrollProgress');
+var backTop = document.getElementById('backTop');
+var siteHeader = document.getElementById('siteHeader');
+
+function onScroll(){
+  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  if(scrollProgress) scrollProgress.style.width = progress + '%';
+  if(scrollTop > 40){ siteHeader.classList.add('scrolled'); } else { siteHeader.classList.remove('scrolled'); }
+  if(scrollTop > 500){ backTop.classList.add('show'); } else { backTop.classList.remove('show'); }
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+// ===== Back To Top =====
+backTop.addEventListener('click', function(){
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+
+// ===== Mobile Menu =====
+var mobileToggle = document.getElementById('mobileToggle');
+var mainNav = document.getElementById('mainNav');
+mobileToggle.addEventListener('click', function(){
+  this.classList.toggle('active');
+  mainNav.classList.toggle('open');
+});
+mainNav.querySelectorAll('a').forEach(function(link){
+  link.addEventListener('click', function(){
+    mobileToggle.classList.remove('active');
+    mainNav.classList.remove('open');
+  });
+});
+
+// ===== Reveal on Scroll =====
+var revealEls = document.querySelectorAll('.reveal');
+var revealObserver = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+revealEls.forEach(function(el){ revealObserver.observe(el); });
+
+// ===== Counter Animation =====
+var counters = document.querySelectorAll('[data-count]');
+var counterObserver = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.5});
+counters.forEach(function(el){ counterObserver.observe(el); });
+
+function animateCounter(el){
+  var target = parseInt(el.getAttribute('data-count'), 10);
+  var duration = 1600;
+  var startTime = null;
+  function step(ts){
+    if(!startTime) startTime = ts;
+    var progress = Math.min((ts - startTime) / duration, 1);
+    var eased = 1 - Math.pow(1 - progress, 3);
+    var current = Math.floor(eased * target);
+    if(target >= 1000){
+      el.textContent = current.toLocaleString();
+    } else {
+      el.textContent = current;
+    }
+    if(progress < 1){
+      requestAnimationFrame(step);
+    } else {
+      if(target >= 1000){
+        el.textContent = target.toLocaleString();
+      } else {
+        el.textContent = target;
+      }
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+// ===== Works Filter =====
+var filterBtns = document.querySelectorAll('.filter-btn');
+var workCards = document.querySelectorAll('.work-card');
+filterBtns.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    filterBtns.forEach(function(b){ b.classList.remove('active'); });
+    this.classList.add('active');
+    var filter = this.getAttribute('data-filter');
+    workCards.forEach(function(card){
+      if(filter === 'all' || card.getAttribute('data-category') === filter){
+        card.style.display = '';
+        setTimeout(function(){ card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 20);
+      } else {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        setTimeout(function(){ card.style.display = 'none'; }, 300);
+      }
+    });
+  });
+});
+
+// ===== Modal =====
+var modalOverlay = document.getElementById('modalOverlay');
+var openModalBtn = document.getElementById('openModal');
+var modalClose = document.getElementById('modalClose');
+var contactForm = document.getElementById('contactForm');
+
+function openModal(){
+  modalOverlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(){
+  modalOverlay.classList.remove('show');
+  document.body.style.overflow = '';
+}
+openModalBtn.addEventListener('click', openModal);
+modalClose.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', function(e){
+  if(e.target === modalOverlay) closeModal();
+});
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape' && modalOverlay.classList.contains('show')) closeModal();
+});
+
+contactForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  var submitBtn = this.querySelector('button[type=submit]');
+  var originalText = submitBtn.textContent;
+  submitBtn.textContent = '提交中...';
+  submitBtn.disabled = true;
+  setTimeout(function(){
+    submitBtn.textContent = '提交成功 ✓';
+    submitBtn.style.background = '#2a5a40';
+    setTimeout(function(){
+      closeModal();
+      contactForm.reset();
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+      submitBtn.style.background = '';
+    }, 1400);
+  }, 900);
+});
+
+// ===== Hero Play Button =====
+var heroPlay = document.getElementById('heroPlay');
+if(heroPlay){
+  heroPlay.addEventListener('click', function(){
+    this.style.transform = 'translate(-50%,-50%) scale(0.9)';
+    setTimeout(function(){
+      heroPlay.style.transform = '';
+      openModal();
+    }, 200);
+  });
+}
+
+// ===== Work Card Click =====
+document.querySelectorAll('.work-card').forEach(function(card){
+  card.addEventListener('click', function(){
+    openModal();
+  });
+});
+
+// ===== Smooth anchor offset =====
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
+  anchor.addEventListener('click', function(e){
+    var targetId = this.getAttribute('href');
+    if(targetId === '#') return;
+    var target = document.querySelector(targetId);
+    if(target){
+      e.preventDefault();
+      var headerOffset = 80;
+      var elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      var offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({top:offsetPosition, behavior:'smooth'});
+    }
+  });
+});
+
+// ===== Marquee duplication for seamless loop =====
+var marqueeTrack = document.getElementById('marqueeTrack');
+if(marqueeTrack){
+  marqueeTrack.innerHTML += marqueeTrack.innerHTML;
+}
+
+})();
+</script>
+</body>
+  </html>
